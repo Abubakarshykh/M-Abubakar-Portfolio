@@ -53,11 +53,20 @@
   font-weight: 500;
 }
 
-.navbar-title {
-  font-weight: 700;
-  font-size: 16px;
-  letter-spacing: 0.5px;
+.navbar-logo {
+  display: flex;
+  align-items: center;
   z-index: 10001;
+}
+
+.navbar-logo img {
+  height: 35px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover img {
+  transform: scale(1.05);
 }
 
 /* Menu Toggle Button */
@@ -194,7 +203,7 @@
   .navbar-connect {
     font-size: 16px;
   }
-  .navbar-title {
-    font-size: 20px;
+  .navbar-logo img {
+    height: 45px;
   }
 }

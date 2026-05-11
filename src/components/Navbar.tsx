@@ -57,8 +57,8 @@ const Navbar = () => {
   return (
     <>
       <div className="header">
-        <a href="/#" className="navbar-title" data-cursor="disable">
-          Abubakar.
+        <a href="/#" className="navbar-logo" data-cursor="disable">
+          <img src="/images/logo.svg" alt="Abubakar Logo" />
         </a>
         <a
           href="mailto:sheikhabubaker498@gmail.com"
