@@ -24,10 +24,10 @@
 }
 
 .about-me p {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 300;
-  line-height: 32px;
-  letter-spacing: 0.5px;
+  line-height: 28px;
+  letter-spacing: 0.3px;
   color: var(--textColor);
   opacity: 0.8;
 }

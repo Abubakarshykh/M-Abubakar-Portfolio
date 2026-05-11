@@ -1,15 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { IoClose } from "react-icons/io5";
 import "./styles/Navbar.css";
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger, SplitText);
 export let smoother: ScrollSmoother;
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   useEffect(() => {
     smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
@@ -40,20 +43,33 @@ const Navbar = () => {
       ScrollSmoother.refresh(true);
     });
   }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = (sectionId: string) => {
+    setIsMenuOpen(false);
+    if (smoother) {
+      smoother.scrollTo(sectionId, true, "top top");
+    }
+  };
   return (
     <>
       <div className="header">
         <a href="/#" className="navbar-title" data-cursor="disable">
-          Logo
+          Abubakar.
         </a>
         <a
-          href="mailto:example@mail.com"
+          href="mailto:sheikhabubaker498@gmail.com"
           className="navbar-connect"
           data-cursor="disable"
         >
           sheikhabubaker498@gmail.com
         </a>
-        <ul>
+
+        {/* Desktop Menu */}
+        <ul className="desktop-nav">
           <li>
             <a data-href="#about" href="#about">
               <HoverLinks text="ABOUT" />
@@ -70,6 +86,41 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
+
+        {/* Mobile Toggle Button */}
+        <button
+          className={`menu-toggle ${isMenuOpen ? "active" : ""}`}
+          onClick={toggleMenu}
+          aria-label="Toggle Menu"
+        >
+          {isMenuOpen ? <IoClose size={28} /> : <HiOutlineMenuAlt3 size={28} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`nav-overlay ${isMenuOpen ? "open" : ""}`}>
+        <div className="nav-overlay-content">
+          <ul>
+            <li onClick={() => closeMenu("#about")}>
+              <span className="nav-number">01</span>
+              <span className="nav-text">ABOUT</span>
+            </li>
+            <li onClick={() => closeMenu("#work")}>
+              <span className="nav-number">02</span>
+              <span className="nav-text">WORK</span>
+            </li>
+            <li onClick={() => closeMenu("#contact")}>
+              <span className="nav-number">03</span>
+              <span className="nav-text">CONTACT</span>
+            </li>
+          </ul>
+          <div className="nav-footer">
+            <p>GET IN TOUCH</p>
+            <a href="mailto:sheikhabubaker498@gmail.com">
+              sheikhabubaker498@gmail.com
+            </a>
+          </div>
+        </div>
       </div>
 
       <div className="landing-circle1"></div>
