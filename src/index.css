@@ -7,8 +7,8 @@
   font-style: normal;
   line-height: 1.5;
   scroll-behavior: smooth;
-  color-scheme: light dark;
-  color: #eae5ec;
+  color-scheme: dark;
+  color: #e2e8f0;
   background-color: var(--backgroundColor);
 
   font-synthesis: none;
@@ -18,8 +18,15 @@
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  --accentColor: #c2a4ff;
-  --backgroundColor: #0b080c;
+
+  /* Indigo Night Theme Colors */
+  --backgroundColor: #0e1117;
+  --surfaceColor: #161c2d;
+  --borderColor: #1e2a45;
+  --textColor: #e2e8f0;
+  --mutedColor: #64748b;
+  --accentColor: #6366f1;
+
   --vh: 100vh;
   --vh: 100svh;
 }

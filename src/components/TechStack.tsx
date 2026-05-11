@@ -132,7 +132,7 @@ const TechStack = () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
       const threshold = document
         .getElementById("work")!
-        .getBoundingClientRect().top;
+        .getBoundingClientRect().top - window.innerHeight * 0.5;
       setIsActive(scrollY > threshold);
     };
     document.querySelectorAll(".header a").forEach((elem) => {
@@ -156,12 +156,13 @@ const TechStack = () => {
       (texture) =>
         new THREE.MeshPhysicalMaterial({
           map: texture,
-          emissive: "#ffffff",
+          emissive: "#000000",
           emissiveMap: texture,
-          emissiveIntensity: 0.3,
-          metalness: 0.5,
-          roughness: 1,
-          clearcoat: 0.1,
+          emissiveIntensity: 0,
+          metalness: 0.8,
+          roughness: 0.4,
+          clearcoat: 0.8,
+          clearcoatRoughness: 0.2,
         })
     );
   }, []);

@@ -6,9 +6,14 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-          dolores numquam iusto Ratione earum ducimus autem id iure pariatur
-          dolorum quae maiores.
+          Frontend and Full-Stack Engineer with hands-on experience building
+          responsive web applications using React, Next.js, Tailwind CSS, and
+          modern JavaScript frameworks. Skilled in developing scalable UI
+          components, integrating REST APIs, and building backend services with
+          FastAPI, Django, and relational databases. I am passionate about clean
+          code, performance optimization, and building scalable systems that
+          combine modern frontend frameworks with robust backend APIs and
+          AI-powered tools.
         </p>
       </div>
     </div>
