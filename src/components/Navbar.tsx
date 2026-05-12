@@ -58,7 +58,7 @@ const Navbar = () => {
     <>
       <div className="header">
         <a href="/#" className="navbar-logo" data-cursor="disable">
-          <img src="/images/logo.svg" alt="Abubakar Logo" />
+          <img src="/images/logo.png" alt="Abubakar Logo" />
         </a>
         <a
           href="mailto:sheikhabubaker498@gmail.com"
