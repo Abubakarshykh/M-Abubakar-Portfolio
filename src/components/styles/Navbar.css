@@ -13,10 +13,6 @@
   z-index: 9999;
 }
 
-.desktop-nav {
-  display: none;
-}
-
 .header ul {
   font-size: 12px;
   display: flex;
@@ -27,6 +23,10 @@
   column-gap: 40px;
   row-gap: 8px;
   align-items: center;
+}
+
+.desktop-nav {
+  display: none !important;
 }
 
 .header ul li {
@@ -44,7 +44,7 @@
 
 .navbar-connect {
   position: absolute;
-  display: none;
+  display: none !important;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -60,7 +60,7 @@
 }
 
 .navbar-logo img {
-  height: 50px;
+  height: 45px;
   width: auto;
   transition: transform 0.3s ease;
 }
@@ -83,6 +83,7 @@
 
 .menu-toggle.active {
   transform: rotate(90deg);
+  color: #fff;
 }
 
 /* Mobile Overlay Menu */
@@ -173,9 +174,12 @@
   }
 
   .desktop-nav {
-    display: flex;
+    display: flex !important;
     align-items: center;
     font-size: 14px;
+  }
+  .navbar-logo img {
+    height: 65px;
   }
 
   .desktop-nav li {
@@ -183,7 +187,7 @@
   }
 
   .navbar-connect {
-    display: block;
+    display: block !important;
   }
 
   .nav-overlay {
@@ -203,6 +207,6 @@
     font-size: 16px;
   }
   .navbar-logo img {
-    height: 65px;
+    height: 85px;
   }
 }

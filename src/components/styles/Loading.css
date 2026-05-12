@@ -194,12 +194,12 @@
   color: var(--backgroundColor);
 }
 .loader-logo {
-  height: 35px;
+  height: 45px;
   width: auto;
 }
 @media only screen and (min-width: 1200px) {
   .loader-logo {
-    height: 45px;
+    height: 65px;
   }
 }
 @keyframes blink {
