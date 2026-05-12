@@ -26,7 +26,7 @@ const textures = imageUrls.map((url) => textureLoader.load(url));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
-const spheres = [...Array(30)].map(() => ({
+const spheres = [...Array(window.innerWidth > 768 ? 30 : 15)].map(() => ({
   scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
 }));
 
@@ -99,12 +99,13 @@ type PointerProps = {
 function Pointer({ vec = new THREE.Vector3(), isActive }: PointerProps) {
   const ref = useRef<RapierRigidBody>(null);
 
-  useFrame(({ pointer, viewport }) => {
+  useFrame(({ pointer, viewport, clock }) => {
     if (!isActive) return;
+    const t = clock.getElapsedTime();
     const targetVec = vec.lerp(
       new THREE.Vector3(
-        (pointer.x * viewport.width) / 2,
-        (pointer.y * viewport.height) / 2,
+        (pointer.x * viewport.width) / 2 + Math.sin(t * 0.5) * 3,
+        (pointer.y * viewport.height) / 2 + Math.cos(t * 0.5) * 3,
         0
       ),
       0.2
@@ -174,7 +175,12 @@ const TechStack = () => {
       <Canvas
         shadows
         gl={{ alpha: true, stencil: false, depth: false, antialias: false }}
-        camera={{ position: [0, 0, 20], fov: 32.5, near: 1, far: 100 }}
+        camera={{
+          position: [0, 0, 20],
+          fov: window.innerWidth > 768 ? 32.5 : 45,
+          near: 1,
+          far: 100,
+        }}
         onCreated={(state) => (state.gl.toneMappingExposure = 1.5)}
         className="tech-canvas"
       >
