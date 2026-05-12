@@ -10,7 +10,7 @@
   left: 50%;
   transform: translateX(-50%);
   top: 0;
-  z-index: 9999;
+  z-index: 10001;
 }
 
 .header ul {
@@ -60,7 +60,7 @@
 }
 
 .navbar-logo img {
-  height: 45px;
+  height: 60px;
   width: auto;
   transition: transform 0.3s ease;
 }
@@ -120,7 +120,7 @@
 }
 
 .nav-overlay-content ul li {
-  font-size: clamp(40px, 10vw, 80px);
+  font-size: clamp(30px, 8vw, 50px);
   font-weight: 700;
   margin-bottom: 20px;
   display: flex;
@@ -179,7 +179,7 @@
     font-size: 14px;
   }
   .navbar-logo img {
-    height: 65px;
+    height: 80px;
   }
 
   .desktop-nav li {
@@ -207,6 +207,6 @@
     font-size: 16px;
   }
   .navbar-logo img {
-    height: 85px;
+    height: 100px;
   }
 }
